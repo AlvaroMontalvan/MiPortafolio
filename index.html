@@ -326,10 +326,70 @@ kbd{padding:.1rem .45rem;border:1px solid var(--line);border-bottom-width:2px;bo
   html{scroll-behavior:auto}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
+
+/* Impresión: hoja A4 profesional, en claro y sin elementos interactivos */
+.print-contact{display:none}
+@media print{
+  @page{size:A4;margin:11mm 13mm}
+  :root:root:root{
+    --bg:#fff;--surface:#fff;--surface-2:#fff;--ink:#111A24;--muted:#4A5866;--line:#C9D2DC;
+    --accent:#0B4F8A;--accent-soft:#E8F0F8;--hl:#0B4F8A;color-scheme:light;
+  }
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none!important;text-shadow:none!important}
+  html{scroll-behavior:auto}
+  body{font:400 9.5pt/1.4 var(--font-body);background:#fff;color:var(--ink)}
+  .skip,.top,.progress,.wa,.to-top,.toast,dialog,.foot,.cta,#contacto,.sec-head p,.ficha dl,.eyebrow,.hero::before,.ico-box,.avatar::before{display:none!important}
+  .rise,.reveal{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  .meter>i{transform:none!important}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:none;padding:0}
+  .hero{overflow:visible;padding:0 0 4mm}
+  .hero-grid{grid-template-columns:minmax(0,1fr) 30mm;gap:6mm;align-items:center}
+  h1{margin:0;font-size:27pt;line-height:1.05;letter-spacing:-.01em}
+  h1 .mark{background:none;padding:0}
+  .lead{margin-top:2.5mm;max-width:none;font-size:10pt;line-height:1.45}
+  .print-contact{display:flex;flex-wrap:wrap;gap:1mm 5mm;margin-top:3mm;padding-top:2.5mm;border-top:1.5px solid var(--accent);font-size:9pt;font-weight:600}
+  .ficha{padding:0;border:0;background:none;border-radius:0}
+  .ficha-top{padding:0;border:0}
+  .avatar-wrap{padding:0;max-width:none}
+  .avatar,.avatar img{border-radius:50%}
+  .avatar{border:1.5px solid var(--accent)}
+  .band,.band-alt{background:none;padding:3.5mm 0;border-top:1px solid var(--line);break-inside:avoid;page-break-inside:avoid}
+  .sec{grid-template-columns:36mm minmax(0,1fr);gap:0 6mm}
+  .sec-head{position:static}
+  .sec-head h2{font:700 10pt var(--font-display);letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+  .sec-head h2::after{display:none}
+  .card,.band-alt .card{background:none;border:0;border-radius:0;padding:0}
+  .hover-card:hover{transform:none}
+  .tag{margin:0 0 0 2mm;padding:.2mm 2mm;font-size:7.5pt}
+  .about{gap:3mm}
+  .about h3{margin-bottom:1mm;font-size:8pt}
+  .about p{font-size:9.5pt;line-height:1.45;max-width:none}
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr));gap:2.5mm 6mm}
+  .skill,.skill:nth-child(n+4){grid-column:auto;display:block}
+  .skill h3,.xp h3,.edu h3,.lang h3{font-size:10pt}
+  .skill p{margin-top:0;font-size:9pt}
+  .skill .tag{display:inline-block;margin-top:.5mm;margin-left:0}
+  .xp-list{gap:3mm}
+  .xp{grid-template-columns:20mm minmax(0,1fr);gap:0 4mm}
+  .xp-hours{padding-right:3mm}
+  .xp-hours strong{font-size:17pt}
+  .xp-hours span{margin-top:0;font-size:8.5pt}
+  .xp .kind{margin-bottom:.5mm;font-size:7.5pt}
+  .xp .org{margin-top:.3mm}
+  .xp p.what{margin-top:.8mm}
+  .edu .degree{margin-top:.5mm;font-size:10pt}
+  .langs{gap:3mm 8mm}
+  .meter{margin-top:1.5mm;height:2.2mm}
+  .comps{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5mm 6mm}
+  .comp h3{font-size:9.5pt}
+  .comp h3::before{content:"\25AA";margin-right:2mm;color:var(--accent)}
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="i-git" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></symbol>
+  <symbol id="i-git"viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
   <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
   <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></symbol>
   <symbol id="i-loop" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><polyline points="21 3 21 9 15 9"/></symbol>
@@ -377,7 +437,8 @@ kbd{padding:.1rem .45rem;border:1px solid var(--line);border-bottom-width:2px;bo
       <button class="btn-ico menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
         <svg class="icon" aria-hidden="true"><use href="#i-menu"/></svg><span>Menú</span>
       </button>
-      <button class="btn-ico" id="theme" type="button" aria-label="Cambiar a tema oscuro" title="Cambiar tema (tecla T)">
+      <button class="btn-ico" type="button" data-print aria-label="Imprimir hoja de vida" title="Imprimir hoja de vida"><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg></button>
+      <button class="btn-ico" id="theme"type="button" aria-label="Cambiar a tema oscuro" title="Cambiar tema (tecla T)">
         <svg class="icon" aria-hidden="true"><use href="#i-moon"/></svg>
       </button>
       <button class="btn-ico" id="help-open" type="button" aria-haspopup="dialog" aria-label="Ayuda para navegar" title="Ayuda (tecla ?)">
@@ -396,10 +457,12 @@ kbd{padding:.1rem .45rem;border:1px solid var(--line);border-bottom-width:2px;bo
         <p class="eyebrow mono rise">Hoja de vida</p>
         <h1 id="titulo" class="rise" style="--d:.08s">Alvaro<br><span class="mark">Montalvan</span></h1>
         <p class="lead rise" style="--d:.16s">Estudiante de sexto semestre de Ingeniería de Software, con pasión por la tecnología y la innovación. Analítico, constante y enfocado en construir soluciones eficientes.</p>
-        <div class="cta rise" style="--d:.24s">
+        <p class="print-contact"><span>alvaro.uio27@gmail.com</span><span>+593 995660712</span><span>La Mariscal, Quito</span><span>github.com/AlvaroMontalvan</span></p>
+        <div class="cta rise"style="--d:.24s">
           <a class="btn btn-primary" href="#contacto" data-jump>Contáctame <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
           <a class="btn btn-ghost" href="#experiencia" data-jump>Ver experiencia</a>
           <a class="btn btn-ghost" href="https://github.com/AlvaroMontalvan" target="_blank" rel="noopener noreferrer" aria-label="GitHub de AlvaroMontalvan (se abre en una pestaña nueva)"><svg class="icon" aria-hidden="true"><use href="#i-git"/></svg> GitHub</a>
+          <button class="btn btn-primary" type="button" data-print><svg class="icon" aria-hidden="true"><use href="#i-print"/></svg> Imprimir CV</button>
         </div>
       </div>
 
@@ -628,6 +691,11 @@ kbd{padding:.1rem .45rem;border:1px solid var(--line);border-bottom-width:2px;bo
   var saved=load('cv-theme');
   if(saved==='dark'||saved==='light'){root.setAttribute('data-theme',saved)}
   var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  /* Al imprimir, las horas deben mostrar su valor final aunque la animación esté en curso */
+  window.addEventListener('beforeprint',function(){
+    document.querySelectorAll('.xp-hours strong[data-end]').forEach(function(n){n.textContent=n.dataset.end});
+  });
+  document.querySelectorAll('[data-print]').forEach(function(b){b.addEventListener('click',function(){window.print()})});
   var themeBtn=document.getElementById('theme');
   function isDark(){var t=root.getAttribute('data-theme');return t?t==='dark':mq.matches}
   function syncTheme(){
@@ -763,7 +831,8 @@ kbd{padding:.1rem .45rem;border:1px solid var(--line);border-bottom-width:2px;bo
     });
     var foot=document.querySelector('.foot');if(foot)mark(foot,0);
     function countUp(el){
-      var end=parseInt(el.textContent,10);if(isNaN(end))return;
+      var end=parseInt(el.dataset.end||el.textContent,10);if(isNaN(end))return;
+      el.dataset.end=end;
       var t0=null,dur=1100;
       function step(t){
         if(t0===null)t0=t;var p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);
